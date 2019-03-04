@@ -1,0 +1,9 @@
+__py*
+.*
+*.pyc
+nbproject
+/_extras
+/aiohomeeclient.*
+/build
+/dist
+/MANIFEST
