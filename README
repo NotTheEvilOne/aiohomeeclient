@@ -1,0 +1,28 @@
+----------------------------------------------------------------------------
+aiohomeeclient
+Asyncio Homee API Client
+----------------------------------------------------------------------------
+
+This project provides asyncio based APIs to connect to and communicate
+with an homee smart home device (https://www.hom.ee).
+
+The code is loosely based on the work of "twendt"
+(https://github.com/twendt/pyhomee) licensed under the "MIT License". As
+large portions have been rewritten the project is not related or continued
+under the same name.
+
+----------------------------------------------------------------------------
+Licensing
+----------------------------------------------------------------------------
+
+This source code is released under the conditions of the license defined in
+the "LICENSE" file.
+
+----------------------------------------------------------------------------
+Contributing
+----------------------------------------------------------------------------
+
+The project is hosted on Github. Please use the configured issue tracker and
+provided tools for contribution.
+
+----------------------------------------------------------------------------
