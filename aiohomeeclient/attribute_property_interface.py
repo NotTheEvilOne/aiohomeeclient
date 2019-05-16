@@ -10,6 +10,9 @@ obtain one at http://mozilla.org/MPL/2.0/.
 
 import asyncio
 
+try: from types import new_class
+except ImportError: new_class = None
+
 from .attribute_property_interfaces import *
 
 class AttributePropertyInterface(object):
@@ -126,11 +129,7 @@ Returns a new "AttributePropertyInterface" instance for the attribute given.
             interfaces.add(base.__name__)
         #
 
-        dynamic_class = type(AttributePropertyInterface.__name__,
-                             tuple(bases),
-                             { "_interfaces": interfaces }
-                            )
-
+        dynamic_class = new_class(AttributePropertyInterface.__name__, tuple(bases), { "_interfaces": interfaces })
         return dynamic_class(node, attribute)
     #
 #

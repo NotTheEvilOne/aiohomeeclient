@@ -11,6 +11,9 @@ obtain one at http://mozilla.org/MPL/2.0/.
 from urllib.parse import unquote
 from weakref import proxy
 
+try: from types import new_class
+except ImportError: new_class = None
+
 from .attribute_property_interface import AttributePropertyInterface
 from .attribute import ATTRIBUTES, Attribute
 from .node_interfaces import *
@@ -381,11 +384,7 @@ Returns a new "Node" instance for the node data given.
             interfaces.add(base.__name__)
         #
 
-        dynamic_class = type(Node.__name__,
-                             tuple(bases),
-                             { "_interfaces": interfaces }
-                            )
-
+        dynamic_class = new_class(Node.__name__, tuple(bases), { "_interfaces": interfaces })
         return dynamic_class(node_data, connection)
     #
 #
